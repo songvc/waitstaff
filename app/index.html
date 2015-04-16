@@ -35,35 +35,37 @@
           </div>
           <div class="panel-body">
 
-           <form name="myForm" class="form-horizontal" novalidate ng-submit="submit()">
+           <form name="myForm" class="form-horizontal" novalidate>
 
                 <div class="form-group">
                   <label class="col-sm-6 control-label">Enter Meal Price: $</label>
                   <div class="col-sm-6">
-                    <input class="form-control" type="number" ng-model="user.mealPrice">
+                    <input class="form-control" type="number" ng-model="mealPrice">
                   </div>                
                 </div>
 
                 <div class="form-group">
                   <label class="col-sm-6 control-label">Tax Rate: %</label>
                    <div class="col-sm-6">
-                    <input class="form-control" type="number" ng-model="user.tax">
+                    <input class="form-control" type="number" ng-model="tax">
                   </div>  
                 </div>
 
                 <div class="form-group">
                   <label class="col-sm-6 control-label">Tip Percentage: %</label>
                    <div class="col-sm-6">
-                    <input class="form-control" type="number" ng-model="user.tip">
+                    <input class="form-control" type="number" ng-model="tip">
                   </div>  
                 </div>
+                <br>
+
 
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-3">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
                   </div>
                   <div class="col-sm-offset-2 col-sm-3">
-                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
                   </div>
                 </div>
 
@@ -82,15 +84,15 @@
           </div>
           <div class="panel-body">
             <div class="col-sm-6">
-              <h5>Subtotal:</h5>
-              <h5>Tip: </h5>
-              <h5>Total: </h5>
+              <h5>Subtotal ($):</h5>
+              <h5>Tip      ($): </h5>
+              <h5>Total    ($): </h5>
             </div>
 
             <div class="col-sm-6" ng-show="success">
-              <h5>{{computePercent(user.mealPrice, user.tax) + user.mealPrice}}</h5>
-              <h5>{{}} </h5>
-              <h5>{{}} </h5>
+              <h5> {{mealList[getMealCount()-1].subTotal}}</h5>
+              <h5> {{mealList[getMealCount()-1].tipAmount}} </h5>
+              <h5> {{mealList[getMealCount()-1].total}} </h5>
             </div>
 
           </div>
@@ -101,9 +103,18 @@
            <h3 class="panel-title">My Earnings Info</h3>
           </div>
           <div class="panel-body">
-            <h5>Tip Total</h5>
-            <h5>Meal count</h5>
-            <h5>Average Tip Per Meal</h5>
+
+           <div class="col-sm-6">
+             <h5>Tip Total ($)</h5>
+             <h5>Meal Count (n)</h5>
+             <h5>Average Tip Per Meal ($/n)</h5>
+           </div>
+          <div class="col-sm-6" ng-show="success">
+             <h5>{{getTipTotal()}}</h5>
+             <h5>{{getMealCount()}}</h5>
+             <h5>{{averageTip()}}</h5>
+           </div>
+
           </div>
         </div> 
 
