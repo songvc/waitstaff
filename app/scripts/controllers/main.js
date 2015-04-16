@@ -48,6 +48,11 @@ angular.module('waitstaffApp')
 		}
     };
 
+    $scope.reset = function(){
+		$scope.mealList = [];	
+		$scope.success = false;	
+    };
+
     $scope.cancel = function(){
     	//Clearing the input field
 	    $scope.mealPrice = '';
