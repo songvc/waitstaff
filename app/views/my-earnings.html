@@ -1,0 +1,22 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">My Earnings Info</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-6">
+      <h5>Tip Total ($)</h5>
+      <h5>Meal Count (n)</h5>
+      <h5>Average Tip Per Meal ($/n)</h5>
+    </div>
+    <div class="col-sm-6" ng-show="success">
+      <h5>{{getTipTotal()}}</h5>
+      <h5>{{getMealCount()}}</h5>
+      <h5>{{averageTip()}}</h5>
+    </div>
+  </div>
+</div> 
+
+<div class="row" style="text-align:center">
+  <button type="button" style="width:700px;"class="btn btn-primary btn-lg" ng-click="reset()">Reset</button>
+</div> 
