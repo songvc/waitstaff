@@ -8,19 +8,17 @@
  * Controller of the waitstaffApp
  */
 angular.module('waitstaffApp')
-  .controller('MainCtrl', function ($scope) {
-   
-	$scope.mealList = [];	
-	$scope.success = false;
-
-  //  $scope.defaults = angular.copy($scope.user);
-    // $scope.subTotal= (user.tax/100)*user.mealPrice + user.mealPrice;
+    .controller('MainCtrl', function ($scope) {
+    console.log("Hello");
+    $scope.mealList = [];   
+    $scope.success = false;
 
     $scope.computePercent = function(a,r){
     	return a + (a * (r/100)); 
     };
 
     $scope.submit = function(){
+
     	if( $scope.myForm.$valid ) {
 			
 			$scope.success = true;
@@ -80,4 +78,6 @@ angular.module('waitstaffApp')
     };
 
 
-  });
+    });
+
+  
