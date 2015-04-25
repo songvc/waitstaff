@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var myApp = angular
   .module('waitstaffApp', ['ngRoute'])
   	.config(['$routeProvider', function($routeProvider){
   		$routeProvider

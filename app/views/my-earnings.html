@@ -9,7 +9,7 @@
       <h5>Meal Count (n)</h5>
       <h5>Average Tip Per Meal ($/n)</h5>
     </div>
-    <div class="col-sm-6" ng-show="success">
+    <div class="col-sm-6" ng-show="Data.success">
       <h5>{{getTipTotal()}}</h5>
       <h5>{{getMealCount()}}</h5>
       <h5>{{averageTip()}}</h5>
@@ -18,5 +18,5 @@
 </div> 
 
 <div class="row" style="text-align:center">
-  <button type="button" style="width:700px;"class="btn btn-success btn-lg" ng-click="reset()">Reset</button>
+  <button type="button" style="width:700px;"class="btn btn-primary btn-lg" ng-click="reset()">Reset</button>
 </div> 
